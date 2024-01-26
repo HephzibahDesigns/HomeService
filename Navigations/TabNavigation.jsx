@@ -7,7 +7,6 @@ import Color from "../Utils/Color";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +39,7 @@ export default function TabNavigation() {
             <Text style={{ fontSize: 12, color, marginTop: -7 }}>Booking</Text>
           ),
           tabBarIcon: ({ color, size }) => (
-            <Entypo name="bookmark" size={size} color={color} />
+            <Ionicons name="bookmarks" size={size} color={color} />
           ),
         }}
       />

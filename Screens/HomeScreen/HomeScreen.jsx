@@ -1,9 +1,10 @@
 import { View, Text } from "react-native";
+import Header from "./Header";
 
 export default function HomeScreen() {
   return (
     <View>
-      <Text>HomeScreen</Text>
+      <Header />
     </View>
   );
 }
