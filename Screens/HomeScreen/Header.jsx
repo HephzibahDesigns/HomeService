@@ -21,9 +21,18 @@ export default function Header() {
             />
 
             <View>
-              <Text style={{ color: Color.WHITE }}>Welcome,</Text>
               <Text
-                style={{ color: Color.WHITE, fontSize: 18, fontWeight: 500 }}
+                style={{ color: Color.WHITE, fontFamily: "outfit-regular" }}
+              >
+                Welcome,
+              </Text>
+              <Text
+                style={{
+                  color: Color.WHITE,
+                  fontSize: 18,
+                  fontWeight: 500,
+                  fontFamily: "outfit-medium",
+                }}
               >
                 {user.fullName}
               </Text>
@@ -52,7 +61,7 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    paddingTop: 30,
+    paddingTop: 15,
     backgroundColor: Color.PRIMARY,
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
@@ -78,8 +87,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 25,
-    marginBottom: 10,
+    marginTop: 18,
   },
 
   textInput: {
@@ -91,6 +99,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     fontSize: 15,
     backgroundColor: "white",
+    fontFamily: "outfit-regular",
   },
 
   searchIcon: {

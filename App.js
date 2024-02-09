@@ -1,10 +1,13 @@
-import { StyleSheet, Platform, SafeAreaView } from "react-native";
+import { StyleSheet, Platform, SafeAreaView, StatusBar } from "react-native";
 import LoginScreen from "./Screens/LoginScreen/LoginScreen";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
 
+import { useFonts } from "expo-font";
+
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./Navigations/TabNavigation";
+import Color from "./Utils/Color";
 
 const tokenCache = {
   async getToken(key) {
@@ -24,12 +27,18 @@ const tokenCache = {
 };
 
 export default function App() {
+  const [fontsLoaded, fontError] = useFonts({
+    "outfit-regular": require("./assets/Fonts/Outfit-Regular.ttf"),
+    "outfit-bold": require("./assets/Fonts/Outfit-Bold.ttf"),
+    "outfit-medium": require("./assets/Fonts/Outfit-Medium.ttf"),
+  });
   return (
     <ClerkProvider
       tokenCache={tokenCache}
       publishableKey="pk_test_Y2l2aWwtc2hlZXAtOTguY2xlcmsuYWNjb3VudHMuZGV2JA"
     >
       <SafeAreaView style={styles.safeview}>
+        <StatusBar barStyle="light-content" backgroundColor={Color.PRIMARY} />
         {/* Sign in component */}
         <SignedIn>
           <NavigationContainer>
@@ -49,7 +58,8 @@ export default function App() {
 const styles = StyleSheet.create({
   safeview: {
     flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? 30 : 0,
+    // backgroundColor: Color.PRIMARY,
+    // color: Color.WHITE,
+    // paddingTop: Platform.OS === "android" ? 30 : 0,
   },
 });
