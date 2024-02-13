@@ -48,7 +48,7 @@ export default function Categories() {
         data={categories}
         horizontal={true}
         renderItem={({ item }) => {
-          console.log(item.name);
+          // console.log(item.name);
           // console.log(item.image.url);
 
           return (

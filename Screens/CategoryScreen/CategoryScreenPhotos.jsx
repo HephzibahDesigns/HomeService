@@ -4,7 +4,7 @@ import Heading from "../../Components/Heading";
 
 export default function CategoryScreenPhotos({ categoryDetail }) {
   return (
-    <View>
+    <View style={{ marginTop: 20 }}>
       {/* Photos*/}
       <Heading text="Photos" />
 

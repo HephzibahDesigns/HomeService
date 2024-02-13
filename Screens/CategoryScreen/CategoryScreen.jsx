@@ -19,7 +19,7 @@ export default function CategoryScreen() {
   const param = useRoute().params;
 
   useEffect(() => {
-    console.log("Category:", param.category);
+    // console.log("Category:", param.category);
     param && getEachCategory();
   }, []);
 

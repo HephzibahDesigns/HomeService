@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ScrollView,
   FlatList,
+  Modal,
 } from "react-native";
 import React, { useState } from "react";
 import { useRoute, useNavigation } from "@react-navigation/native";
@@ -13,16 +14,18 @@ import { Ionicons } from "@expo/vector-icons";
 import Color from "../../Utils/Color";
 import Heading from "../../Components/Heading";
 import CategoryScreenPhotos from "./CategoryScreenPhotos";
+import BookingModal from "./BookingModal";
 
 export default function CategoryScreenDetails() {
   const param = useRoute().params;
 
-  console.log(param.item);
+  // console.log(param.item);
 
   const navigation = useNavigation();
 
   const [categoryDetail, setCategoryDetail] = useState(param.item);
   const [isReadMore, setIsReadMore] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
     <View>
@@ -41,8 +44,9 @@ export default function CategoryScreenDetails() {
 
         <View style={styles.infoContainer}>
           <Text style={{ fontFamily: "outfit-bold", fontSize: 20 }}>
-            {CategoryScreenDetails.name}
+            {categoryDetail.name}
           </Text>
+
           <View style={styles.subContainer}>
             <Text
               style={{
@@ -57,6 +61,7 @@ export default function CategoryScreenDetails() {
               {categoryDetail.category.name}
             </Text>
           </View>
+
           <Text style={styles.address}>
             <Ionicons
               name="location-sharp"
@@ -84,6 +89,7 @@ export default function CategoryScreenDetails() {
 
           {/* About Me*/}
           <Heading text="About Me" />
+
           <Text
             style={{
               fontSize: 16,
@@ -107,6 +113,7 @@ export default function CategoryScreenDetails() {
               {isReadMore ? "Read Less" : "Read More"}
             </Text>
           </TouchableOpacity>
+
           <CategoryScreenPhotos categoryDetail={categoryDetail} />
         </View>
       </ScrollView>
@@ -125,10 +132,21 @@ export default function CategoryScreenDetails() {
           <Text style={styles.messageBtn}>Message</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{ flex: 1 }}>
+        <TouchableOpacity
+          style={{ flex: 1 }}
+          onPress={() => setIsModalVisible(true)}
+        >
           <Text style={styles.bookingBtn}>Book Now</Text>
         </TouchableOpacity>
       </View>
+
+      <Modal
+        visible={isModalVisible}
+        onRequestClose={() => setIsModalVisible(false)}
+        animationType="slide"
+      >
+        <BookingModal setIsModalVisible={setIsModalVisible} />
+      </Modal>
     </View>
   );
 }
