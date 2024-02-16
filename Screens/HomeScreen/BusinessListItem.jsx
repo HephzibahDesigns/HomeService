@@ -1,10 +1,16 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import Color from "../../Utils/Color";
+import { useNavigation } from "@react-navigation/native";
 
 export default function BusinessListItem({ item }) {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("CategoryDetails", { item: item })}
+      style={styles.container}
+    >
       <Image
         source={{ uri: item.images[0].url }}
         style={{
@@ -42,7 +48,7 @@ export default function BusinessListItem({ item }) {
           {item.category.name}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
