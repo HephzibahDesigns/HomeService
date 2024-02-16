@@ -118,6 +118,7 @@ export default function CategoryScreenDetails() {
         </View>
       </ScrollView>
 
+      {/* Book Now / Message*/}
       <View
         style={{
           display: "flex",
@@ -140,6 +141,7 @@ export default function CategoryScreenDetails() {
         </TouchableOpacity>
       </View>
 
+      {/* Modal*/}
       <Modal
         visible={isModalVisible}
         onRequestClose={() => setIsModalVisible(false)}
