@@ -2,7 +2,7 @@ import {
   View,
   Text,
   StyleSheet,
-  Pressable,
+  TouchableOpacity,
   FlatList,
   Image,
 } from "react-native";
@@ -36,9 +36,9 @@ export default function BusinessList() {
       <View style={styles.subContainer}>
         <Heading text="Latest Business" />
 
-        <Pressable onPress={Pressed}>
+        <TouchableOpacity onPress={Pressed}>
           <Text style={styles.viewAll}> View All</Text>
-        </Pressable>
+        </TouchableOpacity>
       </View>
 
       <FlatList
@@ -79,5 +79,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: "outfit-regular",
     color: Color.MEDIUM_PRIMARY,
+    marginRight: 5,
   },
 });

@@ -1,34 +1,44 @@
 {
   "expo": {
-    "name": "HomeService",
+    "name": "HomeService App",
     "slug": "HomeService",
+    "description": "Our home duties jobs app connects job seekers with opportunities in household services, including cleaning, cooking, caregiving, and more.",
     "version": "1.0.0",
-    "scheme": "HomeService",
+    "scheme": "homeservice",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Home.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/Home.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hephzibah.HomeService"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/Home.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.hephzibah.HomeService"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-font"
-    ]
+    "plugins": ["expo-font"],
+    "extra": {
+      "eas": {
+        "projectId": "b177b1fa-3f45-465f-9d53-af2a3ca893fe"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b177b1fa-3f45-465f-9d53-af2a3ca893fe"
+    }
   }
 }

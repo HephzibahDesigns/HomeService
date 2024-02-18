@@ -39,9 +39,9 @@ export default function Categories() {
       <View style={styles.subContainer}>
         <Heading text="Categories" />
 
-        <Pressable onPress={Pressed}>
+        <TouchableOpacity onPress={Pressed}>
           <Text style={styles.viewAll}> View All</Text>
-        </Pressable>
+        </TouchableOpacity>
       </View>
 
       <FlatList
@@ -50,7 +50,6 @@ export default function Categories() {
         renderItem={({ item }) => {
           // console.log(item.name);
           // console.log(item.image.url);
-
           return (
             <TouchableOpacity
               style={styles.container}
@@ -94,6 +93,8 @@ export default function Categories() {
 
 const styles = StyleSheet.create({
   container: {
+    // display: "flex",
+    // flex: 1,
     alignItems: "center",
   },
 
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: "outfit-regular",
     color: Color.MEDIUM_PRIMARY,
+    marginRight: 5,
   },
 
   iconContainer: {
@@ -115,6 +117,6 @@ const styles = StyleSheet.create({
     padding: 17,
     borderRadius: 99,
     marginTop: 12,
-    marginHorizontal: 10,
+    marginHorizontal: 15,
   },
 });
