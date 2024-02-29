@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     resizeMode: "contain",
   },
+
   subContainer: {
     width: "100%",
     height: "70%",

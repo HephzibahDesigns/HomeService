@@ -4,7 +4,6 @@ import {
   StyleSheet,
   FlatList,
   Image,
-  Pressable,
   TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";

@@ -34,6 +34,16 @@ export default function CategoryScreen() {
 
   // console.log(businessCategories.category.name);
 
+  // refreshing the page
+  const [refreshing, setRefreshing] = useState(false);
+
+  // handle refresh function
+  const handleRefresh = () => {
+    setRefreshing(true);
+    param && getEachCategory();
+    setRefreshing(false);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
@@ -72,6 +82,8 @@ export default function CategoryScreen() {
             No Item Found
           </Text>
         }
+        refreshing={refreshing}
+        onRefresh={handleRefresh}
       />
     </View>
   );

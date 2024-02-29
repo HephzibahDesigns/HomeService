@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function CategoryScreenList({ item }) {
   const navigation = useNavigation();
+
   return (
     <TouchableOpacity
       onPress={() =>
