@@ -32,7 +32,7 @@ export default function CategoryScreenDetails() {
       <ScrollView style={{ height: "91%" }}>
         <TouchableOpacity
           style={styles.btnContainer}
-          onPress={() => navigation.navigate("CategoryScreen")}
+          onPress={() => navigation.goBack("CategoryScreen")}
         >
           <Ionicons name="arrow-back" size={25} color={Color.WHITE} />
         </TouchableOpacity>

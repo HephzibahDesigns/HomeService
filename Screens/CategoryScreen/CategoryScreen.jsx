@@ -47,7 +47,7 @@ export default function CategoryScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+        <TouchableOpacity onPress={() => navigation.goBack("HomeScreen")}>
           <Ionicons name="arrow-back" size={25} color="black" />
         </TouchableOpacity>
 

@@ -11,7 +11,7 @@ export default function CategoryScreenList({ item }) {
   return (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate("CategoryDetails", {
+        navigation.push("CategoryDetails", {
           item: item,
         })
       }
